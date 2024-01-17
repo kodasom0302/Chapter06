@@ -56,6 +56,9 @@ public class Server {
 			bw.flush();
 		}
 		
+		System.out.println("============================================");
+		System.out.println("<서버 종료>");
+		
 		//닫기
 		bw.close();
 		br.close();

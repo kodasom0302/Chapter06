@@ -35,11 +35,16 @@ public class Client {
 		InputStreamReader isr=new InputStreamReader(is, "UTF-8");
 		BufferedReader br=new BufferedReader(isr);
 		
-		Scanner sc=new Scanner(System.in);
+		//스캐너 준비
+		//Scanner sc=new Scanner(System.in);
+		InputStream sc=System.in;
+		InputStreamReader scIsr=new InputStreamReader(sc, "UTF-8");
+		BufferedReader scBr=new BufferedReader(scIsr);
 		
 		while (true) {
 			//키보드 입력
-			String str=sc.nextLine();
+			//String str=sc.nextLine();
+			String str=scBr.readLine();
 			
 			if ("/q".equals(str)) {
 				break;
@@ -54,6 +59,9 @@ public class Client {
 			String reMsg=br.readLine();
 			System.out.println("server ["+reMsg+"]");
 		}
+		
+		System.out.println("=============================");
+		System.out.println("<클라이언트 종료>");
 		
 		sc.close();
 		br.close();
