@@ -36,15 +36,17 @@ public class Client {
 		BufferedReader br=new BufferedReader(isr);
 		
 		//스캐너 준비
-		//Scanner sc=new Scanner(System.in);
+		Scanner sc=new Scanner(System.in);
+		/*
 		InputStream sc=System.in;
 		InputStreamReader scIsr=new InputStreamReader(sc, "UTF-8");
 		BufferedReader scBr=new BufferedReader(scIsr);
+		*/
 		
 		while (true) {
 			//키보드 입력
-			//String str=sc.nextLine();
-			String str=scBr.readLine();
+			String str=sc.nextLine();
+			//String str=scBr.readLine();
 			
 			if ("/q".equals(str)) {
 				break;
@@ -62,6 +64,14 @@ public class Client {
 		
 		System.out.println("=============================");
 		System.out.println("<클라이언트 종료>");
+		
+		//println 만들기
+		OutputStream pos=System.out;
+		OutputStreamWriter posw=new OutputStreamWriter(pos, "UTF-8");
+		BufferedWriter pbw=new BufferedWriter(posw);
+		pbw.write("ptintln 테스트");
+		pbw.newLine();
+		pbw.flush();
 		
 		sc.close();
 		br.close();
